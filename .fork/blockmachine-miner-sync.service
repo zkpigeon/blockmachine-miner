@@ -1,0 +1,9 @@
+[Unit]
+Description=Sync the miner fork with upstream
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/.local/share/blockmachine-miner-sync
+ExecStart=/usr/bin/python3 -I .fork/sync.py
+Environment=GIT_TERMINAL_PROMPT=0
+TimeoutStartSec=5min
